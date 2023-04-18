@@ -2,8 +2,8 @@
 
 :root {
     --header-height: 3.5rem;
-    --hue:162;
-    --first-color: hsl(var(--hue), 100%, 40%);
+    --hue:240;
+    --first-color: hsl(var(--hue), 100%, 70%);
     --first-color-alt: hsl(var(--hue), 56%, 35%);
     --title-color: hsl(228, 8%, 95%);
     --text-color: hsl(228, 8%, 65%);
@@ -183,10 +183,25 @@ svg{
     right: 0;
 }
 
+.blur-header{
+    background-color: transparent;
+}
+.blur-header::after{
+    content: '';
+    position: absolute;
+    width: 1000%;
+    height: 100%;
+    background-color: hsla(0, 0%, 10%, .3);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
 /*====Home====*/
 
 .home{
- background-color: var(--container-color);   
+ background-color:var(--container-color);   
 }
 .home__container{
     padding-top: 2rem;
@@ -225,11 +240,12 @@ svg{
     padding: .5rem;
     color: var(--title-color);
     font-size: 1.5rem;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    /*clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);*/
     transition: transform .4s;
 }
 .home__social-link:hover{
     transform: translateY(-.25rem);
+    box-shadow: 0 8px 24px hsl(var(--hue), 100%, 40%, .25);
 }
 .home__image{
     justify-self: center;
@@ -237,7 +253,7 @@ svg{
 .home__blob{
     width: 320px;
     fill: var(--first-color);
-    filter: drop-shadow(0 12px 12px hsla(var(--hue), 100%, 40%, .2)) ;
+   /* filter: drop-shadow(0 12px 12px hsla(var(--hue), 100%, 40%, .2)) ;*/
 }
 .home__img{/* Infos a modifier en fonction de la photo !!!*/
     width: 600px;
@@ -255,3 +271,61 @@ svg{
     font-weight: var(--font-medium);
     transition: box-shadow .4s;
 }
+.button:hover{
+    box-shadow: 0 8px 24px hsl(var(--hue), 100%, 40%, .25);
+}
+
+/*====A Propos====*/
+
+.apropos__container{
+    row-gap: 2.5rem;
+}
+.apropos__data{
+    text-align: center;
+}
+.apropos__description{
+   margin-bottom: 2rem; 
+}
+.apropos__image{
+    justify-self: center;
+}
+.apropos__blob{
+   width: 320px; 
+}
+.apropos__blob path{
+    stroke: var(--first-color); 
+ }
+
+ /*====Compétences=====*/
+ .skills{
+    background-color: var(--container-color);
+ }
+ .skills__container{
+    padding-bottom: 2rem;
+    row-gap: 3.5rem;
+ }
+ .skills__data{
+    text-align: center;  
+ }
+ .skills__description{
+    margin-bottom: 2rem;
+ }
+ .skills__content,
+ .skills__group{
+    display: grid;
+ }
+ .skills__content{
+    justify-content: center;
+    align-items: baseline;
+ }
+ .skills__group{
+    row-gap: 1rem;
+    list-style: decimal-leading-zero;
+ }
+ .skills__item{
+    font-weight: var(--font-medium);
+    color: var(--title-color);
+ }
+ .skills__item::marker{
+    color: var(--first-color);
+ }
