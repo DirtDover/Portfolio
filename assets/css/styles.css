@@ -123,7 +123,7 @@ svg{
     background-color: var(--container-color);
     top: 0;
     left: 0;
-    z-index: var(--z-fixed);
+    z-index: var(--z-index);
 }
 .nav{
     height: var(--header-height);
@@ -244,7 +244,7 @@ svg{
     padding: .5rem;
     color: var(--title-color);
     font-size: 1.5rem;
-    /*clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);*/
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     transition: transform .4s;
 }
 .home__social-link:hover{
@@ -257,7 +257,7 @@ svg{
 .home__blob{
     width: 320px;
     fill: var(--first-color);
-   /* filter: drop-shadow(0 12px 12px hsla(var(--hue), 100%, 40%, .2)) ;*/
+    filter: drop-shadow(0 12px 12px hsla(var(--hue), 100%, 40%, .2)) ;
 }
 .home__img{/* Infos a modifier en fonction de la photo !!!*/
     width: 600px;
@@ -343,6 +343,7 @@ svg{
     row-gap: 2rem;
     justify-content: center;
     padding-block: 1rem;
+    
   }
   .projets__card{
     position: relative;
