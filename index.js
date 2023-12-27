@@ -78,3 +78,27 @@ const scrollActive = () =>{
 }
 
 window.addEventListener('scroll', scrollActive )
+
+const txtAnim = document.querySelector('.home__education');         //Animation du texte
+
+new Typewriter (txtAnim, {
+    deleteSpeed: 30,
+})
+.changeDelay(30)
+.typeString('Développeur Web Junior')
+.pauseFor(1000)
+.deleteChars(22)
+.typeString('Dev <span style="color: #6666FF">HTML/CSS3</span>')
+.pauseFor(1000)
+.deleteChars(9)
+.typeString('<span style="color: #6666FF">React</span>')
+.pauseFor(1000)
+.deleteChars(5)
+.typeString('<span style="color: #6666FF">JavaScript</span>')
+.pauseFor(1000)
+.deleteChars(10)
+.typeString('<span style="color: #6666FF">NodeJs</span>')
+.pauseFor(1000)
+.deleteChars(6)
+.typeString('<span style="color: #6666FF">PHP</span>')
+.start()
